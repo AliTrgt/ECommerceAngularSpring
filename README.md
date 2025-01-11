@@ -1,6 +1,6 @@
 # E-Ticaret Platformu
 
-Bu proje, kullanıcıların ürün satın alabileceği, satıcıların ürün listeleyebileceği ve kullanıcıların ürünlere yorum yapabileceği bir e-ticaret platformudur. Platform, JWT tabanlı kimlik doğrulama kullanılarak güvenli bir şekilde geliştirilmiştir ve modern web teknolojileri ile desteklenmiştir.
+Bu proje, hem alıcılar hem de satıcılar için modern ve kullanışlı bir e-ticaret deneyimi sunmayı amaçlayan bir platformdur. Kullanıcılar, ürünleri inceleyip satın alabilirken; satıcılar, kendi ürünlerini listeleyip yönetebilirler. Platform, JWT tabanlı kimlik doğrulama ile güvenlik altına alınmış ve çağdaş teknolojilerle geliştirilmiştir. ve modern web teknolojileri ile desteklenmiştir.
 
 ## Özellikler
 
