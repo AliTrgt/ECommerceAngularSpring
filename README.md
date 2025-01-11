@@ -15,6 +15,7 @@ Bu proje, kullanıcıların ürün satın alabileceği, satıcıların ürün li
 ## Kullanılan Teknolojiler
 
 - **Backend:**
+  - Java
   - Spring Boot
   - Hibernate (ORM)
   - Maven
@@ -23,6 +24,7 @@ Bu proje, kullanıcıların ürün satın alabileceği, satıcıların ürün li
 - **Frontend:**
   - Angular
   - TypeScript
+  - JavaScript
   - Angular Router (Routing için)
 
 - **Veritabanı:**
