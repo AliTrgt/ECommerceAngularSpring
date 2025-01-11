@@ -1,0 +1,55 @@
+<div class="container my-5">
+     <h2 class="text-center mb-4 text-primary font-weight-bold">Add Balance</h2>
+     <div class="row g-4 justify-content-center">
+       <!-- Bakiye Kartları -->
+       <div class="col-6 col-md-4 col-lg-2">
+         <div class="card text-center p-4 border-0 balance-card" (click)="addBalanceToUser(100)" [class.selected]="selectedBalance === 100">
+           <i class="fas fa-dollar-sign fa-2x text-success"></i>
+           <h5 class="card-title mt-3">100 $</h5>
+         </div>
+       </div>
+       <div class="col-6 col-md-4 col-lg-2">
+         <div class="card text-center p-4 border-0 balance-card" (click)="addBalanceToUser(200)" [class.selected]="selectedBalance === 200">
+           <i class="fas fa-dollar-sign fa-2x text-success"></i>
+           <h5 class="card-title mt-3">200 $</h5>
+         </div>
+       </div>
+       <div class="col-6 col-md-4 col-lg-2">
+         <div class="card text-center p-4 border-0 balance-card" (click)="addBalanceToUser(500)" [class.selected]="selectedBalance === 500">
+           <i class="fas fa-dollar-sign fa-2x text-success"></i>
+           <h5 class="card-title mt-3">500 $</h5>
+         </div>
+       </div>
+       <div class="col-6 col-md-4 col-lg-2">
+         <div class="card text-center p-4 border-0 balance-card" (click)="addBalanceToUser(1000)" [class.selected]="selectedBalance === 1000">
+           <i class="fas fa-dollar-sign fa-2x text-success"></i>
+           <h5 class="card-title mt-3">1000 $</h5>
+         </div>
+       </div>
+       <div class="col-6 col-md-4 col-lg-2">
+         <div class="card text-center p-4 border-0 balance-card" (click)="addBalanceToUser(2000)" [class.selected]="selectedBalance === 2000">
+           <i class="fas fa-dollar-sign fa-2x text-success"></i>
+           <h5 class="card-title mt-3">2000 $</h5>
+         </div>
+       </div>
+       <div class="col-6 col-md-4 col-lg-2">
+         <div class="card text-center p-4 border-0 balance-card" (click)="addBalanceToUser(10000)" [class.selected]="selectedBalance === 10000">
+           <i class="fas fa-dollar-sign fa-2x text-success"></i>
+           <h5 class="card-title mt-3">10000 $</h5>
+         </div>
+       </div>
+     </div>
+   
+     <div class="text-center mt-4">
+       <button class="btn btn-success btn-lg" [disabled]="!selectedBalance" (click)="confirmBalance()">Confirm</button>
+     </div>
+   </div>
+   
+   <!-- Success Popup -->
+   <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
+     <div *ngIf="popUp" class="alert alert-success alert-dismissible fade show" role="alert">
+       <strong>{{selectedBalance}} Has Been Added to Your Account</strong>
+       <button type="button" class="btn-close" aria-label="Close" (click)="closePopUp()"></button>
+     </div>
+   </div>
+   

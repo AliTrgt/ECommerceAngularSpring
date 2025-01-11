@@ -1,0 +1,48 @@
+/* Navbar Background */
+.navbar {
+     background-color: #34495E !important; /* Slightly lighter greyish-blue */
+ }
+ 
+ /* Navbar Brand */
+ .navbar-brand {
+     font-size: 2rem;
+     color: #ECF0F1; /* Light Gray */
+     letter-spacing: 1px;
+     font-weight: 600;
+ }
+ 
+ /* Navbar Links */
+ .nav-link {
+     font-size: 1.1rem;
+     font-weight: 500;
+     color: #BDC3C7 !important; /* Softer Light Gray */
+ }
+ 
+ /* Button Styling */
+ .btn {
+     font-size: 1rem;
+     border-radius: 5px; /* More square/angled corners */
+     padding: 8px 22px;
+ }
+ 
+ /* Button Hover Effects - Removed Hover Color */
+ .btn:hover {
+     transform: scale(1.05);
+     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+ }
+ 
+ /* Navbar Responsive Adjustments */
+ @media (max-width: 768px) {
+     .navbar-brand {
+         font-size: 1.6rem;
+     }
+ 
+     .navbar-nav .nav-link {
+         font-size: 1rem;
+     }
+ 
+     .nav-item {
+         margin-bottom: 10px;
+     }
+ }
+ 

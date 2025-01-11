@@ -1,0 +1,143 @@
+<div class="container mt-4">
+  <div class="row">
+    <!-- Kategori Menüsü -->
+    <div class="col-3">
+      <div class="container">
+        <div class="card mb-3 category-card" style="cursor: pointer;" [ngClass]="{'bg-primary text-white': selectedCategory === ''}"
+          (click)="selectCategory('')">
+          <div class="card-body">
+            <h5 class="card-title text-center">All Categories</h5>
+          </div>
+        </div>
+        <div class="d-flex flex-column">
+          <div *ngFor="let cat of category">
+            <div class="card mb-0 category-card" style="cursor: pointer;"
+              [ngClass]="{'bg-primary text-white': selectedCategory === cat.name}" (click)="selectCategory(cat.name)">
+              <div class="card-body">
+                <h5 class="card-title text-center">{{ cat.name }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fiyat Aralığı Filtrelemesi -->
+        <div class="card mt-3">
+          <div class="card-body">
+            <h5 class="mb-3">Filter by Price</h5>
+            <div>
+              <label for="priceRange">Price Range:</label>
+              <div class="position-relative">
+                <div class="d-flex justify-content-between">
+                  <span>{{ lowPrice }}$</span>
+                  <span>{{ highPrice }}$</span>
+                </div>
+                <div class="slider-wrapper position-relative mt-3">
+                  <input
+                    type="range"
+                    class="form-range position-absolute"
+                    [(ngModel)]="lowPrice"
+                    [min]="minPrice"
+                    [max]="maxPrice"
+                    [style.zIndex]="lowPrice > highPrice - 10 ? 2 : 1"
+                    (input)="onSliderInput()"
+                  />
+                  <input
+                    type="range"
+                    class="form-range position-absolute"
+                    [(ngModel)]="highPrice"
+                    [min]="minPrice"
+                    [max]="maxPrice"
+                    (input)="onSliderInput()"
+                  />
+                  <div
+                    class="slider-track"
+                    [style.left.%]="((lowPrice - minPrice) / (maxPrice - minPrice)) * 100"
+                    [style.right.%]="100 - ((highPrice - minPrice) / (maxPrice - minPrice)) * 100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ürünler -->
+    <div class="col-9">
+      <div class="container">
+        <!-- Sağ Alt Köşede Geçici Alert Box -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
+          <div *ngIf="isSuccessful" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Product Added to Cart</strong>
+            <button type="button" class="btn-close" aria-label="Close" (click)="closeAlert()"></button>
+          </div>
+          <div *ngIf="isSameProduct" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Product Already in Cart</strong>
+            <button type="button" class="btn-close" aria-label="Close" (click)="closeRepeatAlert()"></button>
+          </div>
+        </div>
+
+        <!-- Ürün Başlığı ve Arama Çubuğu -->
+        <div class="row align-items-center my-4">
+          <!-- Başlık -->
+          <div class="col-9">
+            <h2>Products</h2>
+          </div>
+          <!-- Ürün ekleme butonu -->
+          <div class="col-3 d-flex justify-content-end">
+            <button 
+              class="btn btn-primary w-100"
+              [routerLink]="['/createproductpage']"
+              *ngIf="compareRole()"
+              >
+              Add New Product
+            </button>
+          </div>
+          <!-- Arama Çubuğu -->
+          <div class="col-12 d-flex justify-content-end align-items-center mt-3">
+            <div class="search-container w-100">
+              <input
+                type="text"
+                class="form-control search-input"
+                placeholder="Search Products"
+                [(ngModel)]="searchText"
+              />
+              <button class="search-btn">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+
+
+        <!-- Ürünler Grid -->
+        <div class="row">
+          <div class="col-md-4 mb-4" *ngFor="let product of products 
+            | categoryFilter: selectedCategory 
+            | productFilter: lowPrice : highPrice 
+            | search: searchText">
+            <div class="card product-card">
+              <img src="{{ product.imageUrl }}" class="card-img-top" alt="{{ product.name }}"
+                style="height: 200px; object-fit: cover;" [routerLink]="['/productMainPage',product.id]">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">Price: {{ product.price }}$</p>
+                <button *ngIf="isLoggedIn()" type="button" class="btn btn-primary" (click)="addProductToCart(product.id)">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
+  <div *ngIf="!haveStock" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Not Enough Stock</strong>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeHaveStock()"></button>
+  </div>
+</div>

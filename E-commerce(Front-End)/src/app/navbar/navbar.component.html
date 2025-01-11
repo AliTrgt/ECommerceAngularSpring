@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #34495E;">
+    <a class="navbar-brand mx-4" href="#">
+        <b style="font-size: 2rem; letter-spacing: 1px; color: #ECF0F1;">E-commerce</b>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-3">
+                <a class="nav-link" href="#" style="font-size: 1.1rem; font-weight: 500; color: #BDC3C7;">HomePage</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link" routerLink="/productpage" style="font-size: 1.1rem; font-weight: 500; color: #BDC3C7;">Products</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link" routerLink="/about" style="font-size: 1.1rem; font-weight: 500; color: #BDC3C7;">About Us</a>
+            </li>
+            <li class="nav-item mx-3" *ngIf="isLoggedIn()">
+                <a class="nav-link" routerLink="/orderpage"  style="font-size: 1.1rem; font-weight: 500; color: #BDC3C7;">Orders</a>
+            </li>
+        </ul>
+
+        <div class="nav-item ms-auto d-flex align-items-center">
+            <button *ngIf="!isLoggedIn()" type="submit" class="btn btn-light btn-sm me-2" routerLink="/loginpage" style="font-size: 1rem; border-radius: 5px; padding: 8px 22px;">
+                Login
+            </button>
+            <button *ngIf="!isLoggedIn()" type="submit" class="btn btn-success btn-sm me-2" routerLink="/registerpage" style="font-size: 1rem; border-radius: 5px; padding: 8px 22px;">
+                Register
+            </button>
+
+            <button *ngIf="isLoggedIn()" type="submit" class="btn btn-warning btn-sm me-2" routerLink="/balancepage" 
+            style="font-size: 1rem; border-radius: 13px; padding: 8px 22px; background-color: #F39C12; color: white; 
+            font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease;">
+            <i class="fas fa-wallet" style="margin-right: 5px;"></i> Add Balance
+        </button>
+        
+            <button *ngIf="isLoggedIn()" type="submit" class="btn btn-primary btn-sm me-2" routerLink="/accountpage" style="font-size: 1rem; border-radius: 5px; padding: 8px 22px;">
+                Account
+            </button>
+            <button *ngIf="isLoggedIn()" type="submit" class="btn btn-success btn-sm me-2" routerLink="/cartpage" style="font-size: 1rem; border-radius: 5px; padding: 8px 22px;">
+                Cart
+            </button>
+            
+        </div>
+    </div>
+</nav>

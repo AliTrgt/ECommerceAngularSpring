@@ -1,0 +1,72 @@
+/* Genel Form Alanları */
+.container {
+     background-color: #f4f6f8; /* Arka planı açık gri */
+     padding: 30px;
+     border-radius: 10px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+   }
+   
+   form {
+     background-color: white;
+     padding: 30px;
+     border-radius: 10px;
+     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+   }
+   
+   /* Başlık Stili */
+   h2 {
+     color: #2c3e50; /* Başlık rengi */
+     font-weight: 600;
+     font-size: 1.8rem;
+   }
+   
+   /* Etiketler */
+   .form-label {
+     font-weight: 500;
+     color: #34495e; /* Etiket rengi */
+     font-size: 1.1rem;
+   }
+   
+   /* Girdi Alanları */
+   .form-control {
+     border-radius: 5px;
+     border: 1px solid #ccc;
+     font-size: 1.1rem;
+     padding: 12px;
+     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+   }
+   
+   /* Butonlar */
+   .btn {
+     font-size: 1.1rem;
+     padding: 12px;
+     border-radius: 5px;
+     font-weight: 600;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   
+   .btn-primary {
+     background-color: #3498db; /* Mavi */
+     border: none;
+   }
+   
+   .btn-primary:hover {
+     background-color: #2980b9;
+     transform: scale(1.05);
+   }
+   
+   .btn-danger {
+     background-color: #e74c3c; /* Kırmızı */
+     border: none;
+   }
+   
+   .btn-danger:hover {
+     background-color: #c0392b;
+     transform: scale(1.05);
+   }
+   
+   /* Butonlar için hover efekt */
+   .btn:hover {
+     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+   }
+   

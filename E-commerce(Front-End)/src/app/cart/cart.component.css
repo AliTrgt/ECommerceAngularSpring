@@ -1,0 +1,110 @@
+/* Global Styles */
+body {
+     font-family: 'Arial', sans-serif;
+     background-color: #f7f5f1;
+     color: #333;
+     margin: 0;
+     padding: 0;
+   }
+   
+   .container {
+     margin-top: 50px;
+   }
+   
+   .card {
+     border-radius: 15px;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   }
+   
+   .card-body {
+     padding: 20px;
+   }
+   
+   h2 {
+     font-size: 2rem;
+     font-weight: 600;
+     color: #007bff;
+   }
+   
+   .cart-items {
+     margin-bottom: 30px;
+   }
+   
+   .cart-item {
+     padding: 15px;
+     border-bottom: 1px solid #ddd;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+   }
+   
+   .cart-item img {
+     width: 80px;
+     height: 80px;
+     object-fit: cover;
+     border-radius: 8px;
+   }
+   
+   .cart-item-details {
+     flex-grow: 1;
+     margin-left: 15px;
+   }
+   
+   .cart-item-name {
+     font-size: 1.2rem;
+     font-weight: 600;
+   }
+   
+   .cart-item-price {
+     color: #dc3545;
+     font-size: 1.1rem;
+   }
+   
+   .cart-item-quantity {
+     font-size: 1.1rem;
+     color: #555;
+   }
+   
+   .btn {
+     border-radius: 5px; /* Köşeli butonlar */
+     padding: 12px 30px;
+     font-size: 1.1rem;
+     transition: all 0.3s;
+   }
+   
+   .btn:hover {
+     transform: scale(1.05);
+   }
+   
+   .btn-primary {
+     background-color: #007bff;
+     color: white;
+   }
+   
+   .text-center {
+     text-align: center;
+   }
+   
+   .mt-4 {
+     margin-top: 2rem;
+   }
+   
+   .mt-5 {
+     margin-top: 3rem;
+   }
+   
+   .d-flex {
+     display: flex;
+   }
+   
+   .justify-content-between {
+     justify-content: space-between;
+   }
+   
+   .shadow {
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   }
+   .alert-danger {
+      background-color: #dc3545;
+      color:white;
+   }

@@ -1,0 +1,32 @@
+.card {
+     border: 1px solid #ddd;
+     border-radius: 8px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   }
+   
+   .card img {
+     border-radius: 8px 8px 0 0;
+   }
+   
+   .card-body {
+     padding: 15px;
+   }
+   
+   .btn-lg {
+     padding: 12px 30px;
+     font-size: 18px;
+   }
+   
+   button {
+     margin-right: 10px;
+   }
+   
+   .modal-body form input,
+   .modal-body form textarea {
+     margin-bottom: 15px;
+   }
+   
+   .modal-header {
+     background-color: #f8f9fa;
+     border-bottom: 1px solid #ddd;
+   }

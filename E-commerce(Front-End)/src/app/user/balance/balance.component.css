@@ -1,0 +1,86 @@
+/* Background Gradient */
+body {
+     background: linear-gradient(45deg, #f8f9fa, #e3f2fd);
+     font-family: 'Arial', sans-serif;
+   }
+   
+   /* Title Styling */
+   h2 {
+     font-family: 'Roboto', sans-serif;
+     color: #007bff;
+     font-weight: 600;
+   }
+   
+   /* Card Hover & Selection Styles */
+   .card {
+     cursor: pointer;
+     transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+     border-radius: 15px;
+     background-color: #ffffff;
+     border: 1px solid #e0e0e0;
+     padding: 20px;
+   }
+   
+   .card:hover {
+     transform: scale(1.05);
+     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+   }
+   
+   .selected {
+     border: 2px solid #28a745;
+     box-shadow: 0px 0px 12px rgba(40, 167, 69, 0.5);
+   }
+   
+   /* Adding Icons to Card */
+   .card .fas {
+     color: #28a745;
+   }
+   
+   /* Button Styling */
+   .btn-success {
+     padding: 12px 30px;
+     font-size: 1.2rem;
+     border-radius: 30px;
+     transition: background-color 0.3s ease-in-out;
+   }
+   
+   .btn-success:hover {
+     background-color: #218838;
+   }
+   
+   /* Alert Box */
+   .alert {
+     background-color: #28a745;
+     color: white;
+     border-radius: 5px;
+     font-size: 1rem;
+   }
+   
+   .alert .btn-close {
+     color: white;
+   }
+   
+   /* Add some spacing to card title */
+   .card-title {
+     font-size: 1.3rem;
+     font-weight: 600;
+     color: #333;
+     margin-top: 15px;
+   }
+   
+   /* Responsive Styles */
+   @media (max-width: 768px) {
+     .card {
+       padding: 15px;
+     }
+     .btn-success {
+       width: 100%;
+     }
+   }
+   
+   /* Floating Button with Fixed Success Popup */
+   .position-fixed {
+     z-index: 1050;
+   }
+   
+   

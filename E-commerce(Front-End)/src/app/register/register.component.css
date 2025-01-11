@@ -1,0 +1,99 @@
+/* Body Styling */
+body {
+     font-family: 'Arial', sans-serif;
+     background-color: #faeed8;
+     margin: 0;
+     padding: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+   }
+   
+   /* Card Styling */
+   .card {
+     width: 100%;
+     max-width: 400px;
+     background-color: #AF9386;
+     padding: 30px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+     border-radius: 15px;
+   }
+   
+   .card h3 {
+     font-size: 1.8rem;
+     font-weight: bold;
+     color: #ffffff;
+     margin-bottom: 20px;
+   }
+   
+   /* Form Fields */
+   .form-control {
+     border-radius: 8px;
+     padding: 12px 15px;
+     font-size: 1rem;
+     border: 1px solid #ddd;
+     transition: border-color 0.3s ease;
+   }
+   
+   .form-control:focus {
+     border-color: #007bff;
+     outline: none;
+     box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+   }
+   
+   /* Role Selection */
+   .form-check {
+     font-size: 0.95rem;
+     color: #333;
+   }
+   
+   .form-check-input {
+     margin-right: 10px;
+   }
+   
+   .form-check-label {
+     font-weight: bold;
+   }
+   
+   /* Buttons */
+   .btn {
+     border-radius: 8px;
+     font-size: 1rem;
+     font-weight: bold;
+     transition: all 0.3s ease;
+   }
+   
+   .btn-success {
+     background-color: #28a745;
+     color: #fff;
+   }
+   
+   .btn-success:hover {
+     background-color: #218838;
+   }
+   
+   .btn-primary {
+     background-color: #007bff;
+     color: #fff;
+   }
+   
+   .btn-primary:hover {
+     background-color: #0056b3;
+   }
+   
+   /* Background Section for Role Selection */
+   .form-group.d-flex {
+     background-color: #ececec;
+     border-radius: 10px;
+     padding: 12px;
+     justify-content: space-between;
+     align-items: center;
+   }
+   
+   /* Links */
+   a {
+     text-decoration: none;
+     color: #fff;
+   }
+   

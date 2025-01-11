@@ -1,0 +1,32 @@
+<div class="container mt-4">
+ 
+  <div *ngFor="let order of order" class="order-item mb-4 shadow-lg p-4 rounded">
+    <div class="order-header d-flex justify-content-between align-items-center mb-3">
+      <h3 style="color: #007bff;">{{ order.id }}. Order</h3>
+      <p><strong>Order Date:</strong> {{ order.orderDate | date: 'dd-MM-yyyy' }}</p>
+    </div>
+
+    <div class="order-details">
+      <p style="color: green;"><strong style="color: black;">Status : </strong> {{ getOrderStatus(order.orderDate) }}</p>
+    </div>
+
+    <div *ngFor="let item of order.orderItemsList" [routerLink]="['/productMainPage',item.product?.id]" class="cart-item mb-4 p-3 border rounded shadow-sm" id="rouute">
+      <div class="cart-item-img-container mb-3" >
+        <img class="order-item-img" [src]="item.product?.imageUrl ? 'http://localhost:8080' + item.product?.imageUrl : ''" alt="Product Image">
+      </div>
+      <div class="cart-item-details">
+        <h5>{{ item.product?.name }}</h5>
+        <p>{{ item.product?.description }}</p>
+        <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+        <p><strong>Total:</strong> {{ item.price }}$</p>
+      </div>
+    </div>
+
+    
+  </div>
+
+
+  <div class="text-center mt-5">
+    <button class="btn btn-primary" (click)="reloadPage()">Refresh Track Orders</button>
+  </div>
+</div>

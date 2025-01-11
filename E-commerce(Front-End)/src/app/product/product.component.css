@@ -1,0 +1,225 @@
+.card {
+     cursor: pointer;
+}
+/* Global Styles */
+body {
+     font-family: 'Arial', sans-serif;
+     background-color: #f8f9fa;
+     color: #333;
+   }
+   
+   .container {
+     max-width: 1140px;
+   }
+   
+   h2 {
+     font-size: 2.5rem;
+     font-weight: bold;
+     color: #333;
+   }
+   
+   /* Kategori Kartları */
+   .category-card {
+     border-radius: 8px;
+     transition: all 0.3s ease;
+     background-color: #f1f1f1;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   }
+   
+   .category-card:hover {
+     background-color: #007bff;
+     color: #fff;
+   }
+   
+   .category-card .card-body {
+     padding: 15px;
+   }
+   
+   .category-card .card-title {
+     font-size: 1.2rem;
+     font-weight: 600;
+   }
+   
+   .bg-primary {
+     background-color: #007bff !important;
+   }
+   
+   .bg-primary.text-white .card-title {
+     color: #fff;
+   }
+   
+   /* Ürün Kartları */
+   .product-card {
+     border-radius: 8px;
+     overflow: hidden;
+     transition: all 0.3s ease;
+     background-color: #fff;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   }
+   
+   .product-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+   }
+   
+   .product-card .card-img-top {
+     border-radius: 8px 8px 0 0;
+     object-fit: cover;
+   }
+   
+   .product-card .card-body {
+     padding: 20px;
+   }
+   
+   .product-card .card-title {
+     font-size: 1.2rem;
+     font-weight: 600;
+   }
+   
+   .product-card .card-text {
+     font-size: 1rem;
+     color: #555;
+   }
+   
+   .product-card button {
+     border-radius: 5px;
+     padding: 10px 20px;
+     font-size: 1rem;
+     transition: all 0.3s ease;
+   }
+   
+   .product-card button:hover {
+     transform: scale(1.05);
+   }
+   
+   /* Alert Box */
+   .alert {
+     border-radius: 10px;
+     font-weight: 600;
+   }
+   
+   .alert-success {
+     background-color: #28a745;
+     color: white;
+   }
+   
+   .alert-danger {
+     background-color: #dc3545;
+     color: white;
+   }
+   
+   .alert .btn-close {
+     color: white;
+   }
+   
+   /* Responsive Düzenlemeler */
+   @media (max-width: 768px) {
+     .category-card {
+       margin-bottom: 10px;
+     }
+   
+     .product-card {
+       margin-bottom: 15px;
+     }
+   
+     .product-card .card-img-top {
+       height: 180px;
+     }
+   }
+   .slider-wrapper {
+    height: 20px;
+    position: relative;
+  }
+  
+  .form-range {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    margin: 0;
+    background: transparent;
+  }
+  
+  .form-range::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    position: relative;
+    z-index: 3; /* Thumb'un üstte görünmesini sağlar */
+  }
+  
+  .form-range::-moz-range-thumb {
+    pointer-events: all;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    position: relative;
+    z-index: 3; /* Thumb'un üstte görünmesini sağlar */
+  }
+  
+  .slider-track {
+    position: absolute;
+    height: 4px;
+    background-color: #007bff;
+    z-index: 1; /* Track'in altta görünmesini sağlar */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* Arama Çubuğu */
+.search-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.search-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #007bff;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.search-btn i {
+  font-size: 1.2rem; /* Büyüteç simgesi boyutu */
+}
+
+.search-btn:hover {
+  transform: scale(1.1);
+  color: #0056b3; /* Daha koyu mavi renk */
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+/* Focused state for search input */
+.search-input:focus::placeholder {
+  color: transparent; /* Placeholder disappears when focused */
+}

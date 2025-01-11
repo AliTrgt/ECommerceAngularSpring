@@ -1,0 +1,45 @@
+<div class="container my-5">
+     <!-- Satıcı Bilgileri ve Başlık -->
+     <div class="row mb-4">
+       <div class="col-md-12 text-center">
+         <h2>Welcome to Your Seller Dashboard</h2>
+         <p class="lead">Manage your products and showcase them to customers.</p>
+       </div>
+     </div>
+   
+     <!-- Ürün Ekleme Butonu -->
+     <div class="row mb-4">
+       <div class="col-md-12 text-center">
+         <button class="btn btn-primary btn-lg" routerLink="/createproductpage">Add New Product</button>
+       </div>
+     </div>
+   
+     <!-- Ürün Listesi -->
+     <div class="row">
+       <div class="col-md-4" *ngFor="let product of products">
+         <div class="card mb-4">
+           <img src="{{ product.imageUrl }}" alt="Product Image" class="card-img-top" height="250">
+           <div class="card-body">
+             <h5 class="card-title">{{ product.name }}</h5>
+             <p class="card-text">descripton </p>
+             <p class="text-success"><strong>${{ product.price }}</strong></p>
+             <button class="btn btn-info">Edit</button>
+             <button class="btn btn-danger">Delete</button>
+           </div>
+         </div>
+       </div>
+     </div>
+   
+     <!-- Ürün Ekleme Modal -->
+     <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   

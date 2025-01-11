@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <h2 class="text-center">Cart</h2>
+  <div class="card">
+    <div class="card-body">
+      <div class="cart-items">
+        <app-cart-item></app-cart-item>
+      </div>
+
+      <div class="text-center mt-4 mb-4">
+        <button class="btn btn-primary" (click)="completeTheProcess()">Complete the Process</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
+  <div *ngIf="!canAfford" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Insufficient Balance</strong>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeAlertBox()"></button>
+  </div>
+</div>

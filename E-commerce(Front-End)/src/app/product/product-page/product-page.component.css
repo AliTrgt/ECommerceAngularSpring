@@ -1,0 +1,391 @@
+.comment {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.comment p {
+  margin: 0;
+}
+
+.comment p span {
+  font-size: 0.9em;
+  color: #555;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Global Styles */
+body {
+font-family: 'Arial', sans-serif;
+background-color: #f8f9fa;
+color: #333;
+}
+
+h2, h3, h4 {
+font-weight: 600;
+}
+
+.container {
+max-width: 1140px;
+}
+
+.product-image img {
+border-radius: 10px;
+}
+
+.product-title {
+font-size: 2.5rem;
+font-weight: bold;
+color: #333;
+}
+
+.category-text {
+font-size: 1.1rem;
+color: #555;
+}
+
+.price {
+font-size: 1.5rem;
+color: #dc3545;
+}
+
+.rating span i {
+color: #ffcc00;
+}
+
+.rating p {
+font-size: 1.1rem;
+color: #777;
+}
+
+.buttons .btn {
+border-radius: 5px; /* Changed to make the buttons square-edged */
+padding: 12px 30px;
+transition: all 0.3s;
+}
+
+.buttons .btn:hover {
+transform: scale(1.05);
+}
+
+.comment p {
+font-size: 1.1rem;
+color: #555;
+}
+
+.related-products {
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+}
+
+.related-product-item img {
+border-radius: 10px;
+}
+
+.related-product-item {
+transition: transform 0.3s ease;
+}
+
+.related-product-item:hover {
+transform: scale(1.05);
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.review-form {
+background-color: #f8f9fa;
+padding: 20px;
+border-radius: 8px;
+}
+
+.review-form label {
+font-weight: bold;
+}
+
+.rating-stars .btn {
+border-radius: 5px; /* Slightly rounded corners for rating buttons */
+padding: 10px;
+font-size: 1.2rem;
+}
+
+.rating-stars .btn.active {
+background-color: #ffcc00;
+color: #fff;
+}
+
+.btn-primary, .btn-success {
+border-radius: 5px; /* Changed to make the buttons square-edged */
+font-size: 1.1rem;
+}
+
+.btn-primary {
+background-color: #007bff;
+}
+
+.btn-success {
+background-color: #28a745;
+}
+
+.shadow {
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Comments Styling */
+.comment {
+  position: relative;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Delete Button Styling */
+.comment .delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.comment .delete-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.1);
+}
+
+.comment .delete-btn i {
+  font-size: 16px;
+}
+
+/* Comments Styling */
+.comment {
+  position: relative;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Delete Button Styling */
+.comment .delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.comment .delete-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.1);
+}
+
+.comment .delete-btn i {
+  font-size: 16px;
+}
+/* Alert Box Tasarımları */
+.alert {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.alert-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.alert-warning {
+  background-color: #ffc107;
+  color: black;
+}
+
+.alert .btn-close {
+  color: white;
+}
+
+/* Global Ayarlar */
+.position-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1050;
+  padding: 15px;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+  .position-fixed {
+      bottom: 10px;
+      right: 10px;
+  }
+}
+/* Butonu ortalamak için bir kapsayıcı oluşturduk */
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Yükseklik %100, ancak gerektiği gibi ayarlanabilir */
+  width: 100%;  /* Genişlik %100 */
+  text-align: center; /* Butonun metnini ortalamak için */
+  flex-direction: column; /* Buton ve yazıyı dikeyde ortalamak için */
+}
+
+
+/* Stil iyileştirmeleri sadece dosya yükleme butonuna */
+.upload-photo-btn {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff; /* Buton rengi */
+  color: #fff;
+  padding: 12px 25px; /* Butonun iç boşluğu */
+  border-radius: 25px; /* Butonun yuvarlatılmış köşeleri */
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Hover animasyonu */
+  text-align: center;
+}
+
+.upload-photo-btn:hover {
+  background-color: #0056b3; /* Hover rengi */
+  transform: scale(1.05); /* Hoverda büyüme efekti */
+}
+
+.upload-photo-btn input[type="file"]:focus {
+  outline: none; /* Focusta kenarlık olmasın */
+}
+
+.upload-photo-btn span {
+  font-size: 1rem;
+  padding-left: 10px; /* Yazıyı butona uygun şekilde yerleştirmek için */
+}
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.product-image {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  height: 100%;          
+}
+
+.product-image img {
+  max-width: 100%;          
+  max-height: 100%;        
+  object-fit: contain;      
+}
+#rouute{
+  cursor: pointer;
+}
+/* Yorum kutusunun etrafındaki ince çizgiler */
+.border-highlight {
+  border: 1px solid #ddd; /* İnce gri çizgi */
+  padding: 15px; /* İçerik ile kenar arasındaki boşluk */
+  border-radius: 8px; /* Yumuşak köşeler */
+  background-color: #f9f9f9; /* Yumuşak gri arka plan */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Hafif gölge */
+}
+
+/* Kullanıcı adını şekil içine alacak kutu */
+.user-name {
+  display: inline-block; /* Yalnızca isim kısmının çevresinde kutu */
+  padding: 5px 10px; /* İsim çevresinde boşluk */
+  border: 1px solid #ddd; /* İnce gri çizgi */
+  border-radius: 5px; /* Hafif yuvarlatılmış köşeler */
+  background-color: #f0f0f0; /* Gri arka plan */
+  font-weight: bold; /* Kullanıcı adı vurgusu */
+  font-size: 1.1rem;
+  margin-right: 10px; /* İsim ile yıldız arasındaki mesafe */
+}
+
+/* Silme butonunun stili */
+.delete-btn {
+  background-color: #e74c3c; /* Kırmızı renk */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b; /* Hoverda daha koyu kırmızı */
+  cursor: pointer;
+}
+
+/* Kullanıcı adı ve yorum metni stilizasyonu */
+.comment h6 {
+  margin-bottom: 10px;
+}
+
+.comment p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}

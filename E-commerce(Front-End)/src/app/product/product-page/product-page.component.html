@@ -1,0 +1,122 @@
+<div class="container my-5">
+  <div class="row">
+    <!-- Product Image -->
+    <div class="col-md-6 product-image">
+      <img *ngIf="product.imageUrl; else uploadPhoto" [src]="product.imageUrl" class="img-fluid rounded shadow-lg">
+      <div *ngIf="isLoading" class="loading-overlay">
+        <div class="spinner"></div>
+      </div>
+
+      <ng-template #uploadPhoto>
+        <div class="upload-container" *ngIf="getUserRole()">
+          <label class="upload-photo-btn">
+            <input type="file" (change)="onFileSelected($event)" id="photoUpload" hidden>
+            <span>Upload Photo</span>
+          </label>
+          <div class="upload-info">
+            <p class="text-muted mt-2">* Only PNG files are allowed</p>
+          </div>
+        </div>
+      </ng-template>
+     
+    </div>
+
+
+
+
+    <!-- Product Details -->
+    <div class="col-md-6 product-details">
+      <h2 class="product-title">{{product.name}}</h2>
+      <p class="lead category-text">Category: {{product.category?.name || "None"}}</p>
+      <p class="price text-danger"><strong>{{product.price}}$</strong></p>
+
+
+      <div class="rating mb-4">
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star-half-alt"></i></span>
+        <span><i class="far fa-star"></i></span>
+        <p>{{product.stock}} Has Left Hurry Up</p>
+      </div>
+
+      <div class="description mt-4">
+        <h4>Description:</h4>
+        <p>{{product.description}}</p>
+      </div>
+
+      <div class="buttons mt-4" *ngIf="isLoggedIn()">
+        <button class="btn btn-primary btn-lg mx-2 shadow" (click)="addProductToCart()" [disabled]="product.stock <= 0">
+          Add to Cart
+        </button>
+        <button class="btn btn-info btn-lg mx-2 shadow" routerLink="/about">
+          More Information
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Comments Section -->
+  <div class="comments-section mt-5">
+    <h3>Customer Reviews</h3>
+
+    <!-- Review Form -->
+    <form (ngSubmit)="createReview()" class="form-group review-form" *ngIf="isLoggedIn()">
+      <label for="comment">Add your review:</label>
+      <textarea [(ngModel)]="review.comment" id="comment" name="comment" class="form-control" rows="4"
+        placeholder="Write your comment here..." required></textarea>
+
+      <label class="mt-3">Rate the product:</label>
+      <div class="d-flex justify-content-start gap-2 my-3 rating-stars">
+        <button type="button" class="btn btn-outline-warning" *ngFor="let r of [1, 2, 3, 4, 5]"
+          [class.active]="review.rating === r" (click)="review.rating = r">
+          {{r}} <i class="fas fa-star"></i>
+        </button>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-3 shadow">Submit</button>
+    </form>
+
+    <!-- Display Comments -->
+    <div *ngFor="let re of reviewList" class="comment mt-3 border-highlight">
+      <h6>
+        <div class="user-name">
+          <strong id="rouute" [routerLink]="['/accountpage',re.user?.id]">{{re.user?.firstName}}</strong>
+        </div>
+        <span>{{re.rating}}⭐</span>
+      </h6>
+      <p>{{re.comment}}</p>
+
+      <button *ngIf="canDeleteReview(re)" class="delete-btn" (click)="deleteReview(re.id)">
+        <i class="fas fa-trash-alt"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
+  <div *ngIf="isBlank" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Comment Section Can Not Be Left Blank</strong>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeAlertBox()"></button>
+  </div>
+  <div *ngIf="isAdding" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Product Added to Cart</strong>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeAddingAlertBox()"></button>
+  </div>
+  <div *ngIf="isSameItem" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Product Already in Cart</strong>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeAlreadyHave()"></button>
+  </div>
+  <div *ngIf="!haveStock" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Not Enough Stock</strong>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeHaveStock()"></button>
+  </div>
+  <div *ngIf="isBlankRating" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>You Have to Rate</strong>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeAlertBox()"></button>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div *ngFor="let item of recentCartItems" class="container mt-4">
+    <div class="row">
+        <!-- Cart Item Example -->
+        <div class="col-md-12">
+            <div class="card mb-3 shadow">
+                <div class="row no-gutters">
+                    <div class="col-md-4" id="cursorr" [routerLink]="['/productMainPage',item.product?.id]">
+                        <img [src]="item.product?.imageUrl ? 'http://localhost:8080' + item.product?.imageUrl : ''" alt="Product Image" class="cart-item-img">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <!-- Product Name -->
+                            <h5 class="card-title"> {{item.product?.name}} </h5>
+
+                            <!-- Product Description -->
+                            <p class="card-text"> {{item.product?.description}} </p>
+
+                            <!-- Quantity and Price -->
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <!-- Quantity -->
+                                    <label for="quantity-{{item.id}}">Quantity:</label>
+                                    <input type="number" 
+                                           id="quantity-{{item.id}}" 
+                                           class="form-control"
+                                           [(ngModel)]="item.quantity" 
+                                           min="1" 
+                                           [attr.max]="item.product?.stock" 
+                                           style="width: 70px;"
+                                           (blur)="onQuantityBlur(item)" 
+                                           (ngModelChange)="updateQuantity(item.id, item)" />
+                                  
+                                </div>
+                                <div>
+                                    <!-- Price Calculation -->
+                                    <p class="card-text"><strong>Total: </strong><span id="total-price">
+                                            {{(item.product?.price || 0) * item.quantity}}$ </span></p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-danger btn-sm" (click)="removeCartItem(item.id)">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between font-weight-bold mt-3">
+    <span>Total Amounth:</span>
+    <span>{{getTotalPrice()}} $ </span>
+</div>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
+    <div *ngIf="balanceInsufficient" class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Insufficient Balance</strong>
+      <button type="button" class="btn-close" aria-label="Close" (click)="closeAlertBox()"></button>
+    </div>
+  </div>
+  

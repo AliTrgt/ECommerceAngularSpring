@@ -1,0 +1,38 @@
+<body class="d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #ffff;">
+  <div class="card text-center p-4" style="width: 100%; max-width: 380px; padding: 30px; background-color: #34495E; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 12px;">
+    <h3 class="mb-4 text-white">Register</h3>
+    <form #registerForm="ngForm" (ngSubmit)="onRegister()">
+      <div class="form-group mb-3">
+        <input [(ngModel)]="user.username" name="username" type="text" class="form-control" style="border-radius: 0;" placeholder="Username" required>
+      </div>
+      <div class="form-group mb-3">
+        <input [(ngModel)]="user.password" name="password" type="password" class="form-control" style="border-radius: 0;" placeholder="Password" required>
+      </div>
+      <div class="form-group mb-3">
+        <input [(ngModel)]="user.firstName" name="firstName" type="text" class="form-control" style="border-radius: 0;" placeholder="First Name" required>
+      </div>
+      <div class="form-group mb-3">
+        <input [(ngModel)]="user.lastName" name="lastName" type="text" class="form-control" style="border-radius: 0;" placeholder="Last Name" required>
+      </div>
+      <div class="form-group mb-4">
+        <input [(ngModel)]="user.email" name="email" type="text" class="form-control" style="border-radius: 0;" placeholder="Email" required>
+      </div>
+      <div class="form-group mb-4 d-flex justify-content-around" style="background-color: #ececec; padding: 10px; border-radius: 8px;">
+        <div class="form-check">
+          <input class="form-check-input"  (change)="onRoleSelect('ROLE_SELLER')" type="radio"  name="commerce" id="seller" value="seller" required>
+          <label class="form-check-label" for="seller">
+            Seller
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" (change)="onRoleSelect('ROLE_CUSTOMER')" type="radio"  name="commerce" id="customer" value="customer" required>
+          <label class="form-check-label" for="customer">
+            Customer
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success btn-block" style="border-radius: 0; width: 100%;">Register</button>
+    </form>
+    <a style="border-radius: 0; width: 100%;" class="btn btn-primary mt-3" routerLink="/homepage">Back to the main page</a>
+  </div>
+</body>
