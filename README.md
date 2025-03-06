@@ -2,6 +2,8 @@
 
 https://github.com/user-attachments/assets/5b4b6eb3-11f0-4506-9cc5-fafe75739917
 
+![Database Diagram](./DatabaseDiagram.png)
+
 
 Bu proje, hem alıcılar hem de satıcılar için modern ve kullanışlı bir e-ticaret deneyimi sunmayı amaçlayan bir platformdur. Kullanıcılar, ürünleri inceleyip satın alabilirken; satıcılar, kendi ürünlerini listeleyip yönetebilirler. Platform, JWT tabanlı kimlik doğrulama ile güvenlik altına alınmış ve çağdaş teknolojilerle geliştirilmiştir. ve modern web teknolojileri ile desteklenmiştir.
 
